@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${SQL_PASSWORD:?Set SQL_PASSWORD in .env}
+    volumes: ["shop-data:/var/opt/mssql"]
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' -b -o /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+  init:
+    build: .
+    image: akhila-edit:local
+    command: ["--init"]
+    environment:
+      ConnectionStrings__Shop: "Server=db;Database=AkhilaEdit;User Id=sa;Password=${SQL_PASSWORD};Encrypt=True;TrustServerCertificate=True"
+    depends_on:
+      db: {condition: service_healthy}
+  shop:
+    image: akhila-edit:local
+    build: .
+    ports: ["127.0.0.1:8080:8080"]
+    environment:
+      ConnectionStrings__Shop: "Server=db;Database=AkhilaEdit;User Id=sa;Password=${SQL_PASSWORD};Encrypt=True;TrustServerCertificate=True"
+      ASPNETCORE_ENVIRONMENT: Production
+    depends_on:
+      init: {condition: service_completed_successfully}
+volumes:
+  shop-data:

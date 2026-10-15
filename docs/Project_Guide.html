@@ -1,0 +1,729 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Akhila Edit — Project & Learning Guide</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#1d2939;font:16px/1.75 Arial,sans-serif}header{background:#183d31;color:#fff;padding:52px max(5vw,24px)}header p{color:#caddd3;margin:8px 0}.eyebrow{font-size:12px;letter-spacing:2px}header h1{font-family:Georgia,serif;font-size:44px;font-weight:400;margin:12px 0}nav{display:flex;flex-wrap:wrap;gap:24px;background:#fff;border-bottom:1px solid #d7ded8;padding:18px max(5vw,24px)}nav a{color:#244a3e;font-weight:600;text-decoration:none}.layout{max-width:1080px;padding:32px 24px 80px;margin:auto}section{background:#fff;padding:42px 48px;margin:24px 0;border:1px solid #dce3df}h1,h2,h3{line-height:1.3;scroll-margin-top:20px}section h1{font-family:Georgia,serif;font-size:32px;color:#183d31}h2{font-size:23px;margin-top:38px;border-top:1px solid #e1e6e2;padding-top:24px}h3{font-size:18px}a{color:#1e5796}table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow-x:auto;margin:24px 0}th,td{padding:12px;text-align:left;vertical-align:top;border:1px solid #dce3df}th{background:#eef3ef}pre{background:#14242d;color:#eff5f1;padding:22px;overflow:auto;font-size:13px;line-height:1.6}code{font-family:Consolas,monospace}p code,li code{background:#eef2ee;padding:2px 5px;border-radius:3px}li{margin:8px 0}.status{background:#edf5ef;border-left:4px solid #244a3e;padding:20px;margin:10px 0}.pending{background:#fff7e5;border-left:4px solid #b98020;padding:18px;font-size:14px}@media(max-width:650px){header h1{font-size:34px}section{padding:22px}.layout{padding:12px}nav{gap:16px;font-size:14px}}@media print{body{background:white;font-size:11pt}header{background:white;color:#183d31;padding:20px}header p{color:#344e43}nav{display:none}.layout{max-width:none;padding:0}section{border:0;padding:0;margin:0;break-before:page}table{display:table;font-size:9pt}pre{white-space:pre-wrap;background:#eef2ee;color:black}h2,h3{break-after:avoid}tr{break-inside:avoid}}</style></head><body><header><div class="eyebrow">AKHILA GOGULAMUDI / RETAIL ENGINEERING PROJECT</div><h1>The Akhila Edit</h1><p>React · C# / ASP.NET Core · SQL Server</p><p>Build, test, deploy locally, and understand every layer.</p></header><nav><a href="#guide">Project guide</a><a href="#uat">UAT checklist</a><a href="#evidence">Verification evidence</a><a href="#cloud">Azure release runbook</a></nav><main class="layout"><div class="status"><strong>48 automated tests passed.</strong> The local production release was verified against real SQL Server.</div><div class="pending"><strong>Still pending:</strong> browser visual checks, your UAT sign-off, and public cloud deployment. This guide clearly separates completed work from prepared steps.</div><section id="guide"><h1 id="the-akhila-edit">The Akhila Edit</h1>
+
+<h2 id="a-practical-react-c-and-sql-server-retail-project">A practical React, C# and SQL Server retail project</h2>
+
+<p>Prepared for <strong>Akhila Gogulamudi</strong>. This is a personal learning and portfolio project built with AI assistance. It is deliberately small enough to understand end to end. It does not claim to be a TJX system or reproduce confidential employer work.</p>
+
+<h2 id="1-what-the-application-does">1. What the application does</h2>
+
+<p>The shop sells six fictional everyday essentials: a backpack, mug, journal, bottle, lamp and headphones. Customers can browse, search, filter by category, sort by price, inspect a product, add available items to a bag, change quantities and place a demo order. The headphones begin out of stock so you can demonstrate that state. No card details, shipping address, real payment or delivery are involved. Use a sample name at checkout.</p>
+
+<p>The browser remembers product IDs and quantities in local storage. The API reads actual prices from SQL Server at checkout. A successful checkout creates an order and its order lines, reduces inventory, and returns a receipt. If any item is unavailable, the whole database transaction rolls back.</p>
+
+<p>Demo rules: at most 10 units of a product per order; up to 20 distinct lines per request; $5 demo shipping below $75 and free demo shipping at or above $75. Totals exclude tax. These are project rules, not a representation of actual sales-tax treatment.</p>
+
+<h2 id="2-the-three-parts-in-simple-language">2. The three parts, in simple language</h2>
+
+<p><strong>React is the shop counter.</strong> It shows products and responds to clicks. Components and state decide what the customer sees. It is written in JavaScript/JSX and styled with CSS.</p>
+
+<p><strong>ASP.NET Core is the order desk.</strong> It receives HTTP requests, validates inputs, applies rules and asks the database to read or save information. It is written in C#. This project uses modern .NET 10 and ASP.NET Core, rather than the older Windows-only .NET Framework 4.x.</p>
+
+<p><strong>SQL Server is the permanent record.</strong> It stores products, stock, orders and order lines. Entity Framework Core translates C# data access into SQL. It is a data-access library, not a replacement database.</p>
+
+<p>In development, React runs on port 5173 and forwards <code>/api</code> requests to the C# service on port 5080. In a release build, ASP.NET Core serves both the compiled React files and the API from one origin. The browser never connects directly to SQL Server and never receives the database password.</p>
+
+<h2 id="3-where-to-start-reading-the-code">3. Where to start reading the code</h2>
+
+<table>
+<thead>
+<tr>
+  <th>File</th>
+  <th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>frontend/src/main.jsx</code></td>
+  <td>Storefront, dialogs, cart display and checkout form</td>
+</tr>
+<tr>
+  <td><code>frontend/src/cart.js</code></td>
+  <td>Cart validation, quantity changes and estimated totals</td>
+</tr>
+<tr>
+  <td><code>frontend/src/api.js</code></td>
+  <td>HTTP calls and readable error messages</td>
+</tr>
+<tr>
+  <td><code>frontend/src/style.css</code></td>
+  <td>Layout, colors, responsive rules and focus states</td>
+</tr>
+<tr>
+  <td><code>backend/Shop.Api/Program.cs</code></td>
+  <td>App setup, dependency injection, HTTP endpoints and middleware</td>
+</tr>
+<tr>
+  <td><code>backend/Shop.Api/Models.cs</code></td>
+  <td>Entities, request/response DTOs and input rules</td>
+</tr>
+<tr>
+  <td><code>backend/Shop.Api/ShopDb.cs</code></td>
+  <td>EF Core mappings, indexes, constraints and sample products</td>
+</tr>
+<tr>
+  <td><code>backend/Shop.Api/CheckoutService.cs</code></td>
+  <td>Checkout transaction, stock updates and retry handling</td>
+</tr>
+<tr>
+  <td><code>backend/Shop.Tests</code></td>
+  <td>C# unit tests and real SQL Server integration tests</td>
+</tr>
+<tr>
+  <td><code>database/001-schema.sql</code></td>
+  <td>Generated initial schema and sample catalog, when generation is verified</td>
+</tr>
+<tr>
+  <td><code>deploy/publish-local.ps1</code></td>
+  <td>Build and run a local release on Windows</td>
+</tr>
+<tr>
+  <td><code>compose.yaml</code> and <code>Dockerfile</code></td>
+  <td>Container packaging and local deployment configuration</td>
+</tr>
+<tr>
+  <td><code>.github/workflows/ci.yml</code></td>
+  <td>Prepared automated build/test workflow</td>
+</tr>
+<tr>
+  <td><code>evidence</code></td>
+  <td>Actual execution evidence; do not confuse prepared tests with passed tests</td>
+</tr>
+</tbody>
+</table>
+
+<p>Start with <code>Models.cs</code>, then <code>ShopDb.cs</code>, then <code>CheckoutService.cs</code>. Read <code>Program.cs</code> after you understand those responsibilities. Finish with the React request flow.</p>
+
+<h2 id="4-database-design">4. Database design</h2>
+
+<p>There are three business tables.</p>
+
+<p><strong>Products:</strong> Id, Name, Category, Description, Price, Stock and Image. <code>Price</code> is a SQL decimal, not floating-point. <code>Stock</code> is an integer with a database constraint preventing negative values. The category/ID index supports category browsing with stable ordering.</p>
+
+<p><strong>Orders:</strong> Id (random GUID), RequestId, Fingerprint, CustomerName, CreatedAt, Subtotal, Shipping and Total. A unique index on RequestId prevents two persisted orders with the same checkout request ID. CreatedAt is stored as UTC. The API omits the sample customer name from receipts.</p>
+
+<p><strong>OrderItems:</strong> Id, OrderId, ProductId, ProductName, UnitPrice and Quantity. One order has many order items. ProductId points to a product. ProductName and UnitPrice are snapshots: changing a catalog price later must not rewrite an old order's receipt. A foreign key prevents an order line referring to a nonexistent product. Quantities have a 1–10 database check.</p>
+
+<p>This version uses EF Core <code>EnsureCreatedAsync()</code> for an explicit first-time setup through <code>--init</code>. It is suitable for a fresh, isolated demo database. It does <strong>not</strong> upgrade an existing schema. Do not mix it with EF migrations later without a planned baseline transition. For the next version, adopt migrations before changing a database that contains data you want to keep.</p>
+
+<p>Never point integration tests at your main database. Tests require a database name ending in <code>_Tests</code> and recreate its contents for isolation.</p>
+
+<h2 id="5-one-checkout-step-by-step">5. One checkout, step by step</h2>
+
+<ol>
+<li>The customer adds two mugs. React stores <code>{id: 2, quantity: 2}</code> in the bag. It shows an estimate of $36 plus $5 demo shipping.</li>
+<li>The customer enters a sample name and selects <strong>Place demo order</strong>.</li>
+<li>React creates a random request ID and sends product IDs and quantities to <code>POST /api/orders</code>. It does not send an authoritative price or total.</li>
+<li>The C# endpoint passes the request to <code>CheckoutService</code> through dependency injection. Validation rejects empty names, empty bags, duplicate lines, null lines, invalid IDs and quantities outside 1–10.</li>
+<li>The service creates a fingerprint from the normalized name and sorted cart. It starts a database transaction.</li>
+<li>It checks whether RequestId was already saved. If the fingerprint matches, it returns that receipt. If it does not match, it returns HTTP 409.</li>
+<li>For each product, the database executes a conditional stock decrement: update the product only where its stock is at least the requested quantity. A zero-row result means checkout cannot continue.</li>
+<li>The service reads the product price from SQL Server. It builds order lines using those prices, calculates totals, and inserts the order and lines.</li>
+<li>The transaction commits. If any earlier step throws, disposing the transaction rolls back all earlier stock updates.</li>
+<li>React displays the receipt, clears the bag and refreshes the catalog.</li>
+</ol>
+
+<p>A concrete example: mugs start at 24 units. Buying two should produce a $41 demo total, create one order with one line, and leave 22 mugs. Repeating the same request must return the same order and leave stock at 22.</p>
+
+<h2 id="6-why-the-inventory-logic-is-worth-discussing">6. Why the inventory logic is worth discussing</h2>
+
+<p>A weak approach reads stock, checks it in C#, then updates it later. Two requests can both read the last unit before either changes it. This project instead uses one conditional database UPDATE. SQL Server coordinates concurrent updates to the row. The entire checkout uses a transaction, so a failure on the second item restores a decrement already performed on the first.</p>
+
+<p>Products are processed in ascending ID order to reduce deadlock risk. The service still handles SQL Server deadlock error 1205 with a conflict response. This is a practical safeguard, not a claim that deadlocks are impossible. Unique request IDs and transaction rollback also protect against duplicate order writes. A concurrent duplicate may initially return 409; retrying the same request after the winner commits returns the saved receipt.</p>
+
+<p>The UI disables the submit button during checkout. That improves usability, but database constraints and idempotency provide the actual protection. Client controls alone are not a reliable security boundary.</p>
+
+<h2 id="7-api-reference">7. API reference</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Method and path</th>
+  <th>Purpose</th>
+  <th>Important outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>GET <code>/api/health</code></td>
+  <td>Check database connectivity</td>
+  <td>200 healthy; 503 unavailable</td>
+</tr>
+<tr>
+  <td>GET <code>/api/products</code></td>
+  <td>Browse products</td>
+  <td>Search, category, price sort and page parameters</td>
+</tr>
+<tr>
+  <td>GET <code>/api/products/{id}</code></td>
+  <td>Read one product</td>
+  <td>200 product; 404 missing</td>
+</tr>
+<tr>
+  <td>POST <code>/api/orders</code></td>
+  <td>Validate and place a demo order</td>
+  <td>200 receipt; 400 invalid input; 409 conflict; 429 rate limit</td>
+</tr>
+<tr>
+  <td>GET <code>/api/orders/{id}</code></td>
+  <td>Retrieve a receipt</td>
+  <td>200 receipt; 404 missing</td>
+</tr>
+<tr>
+  <td>GET <code>/openapi/v1.json</code></td>
+  <td>Machine-readable API contract</td>
+  <td>Import into Postman</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example product query: <code>/api/products?category=Desk&amp;sort=price-asc&amp;page=1&amp;pageSize=2</code>.</p>
+
+<p>Example order body:</p>
+
+<pre><code>{
+  "requestId": "d4b40dc1-020c-4e06-89e7-f47e9fa6c689",
+  "customerName": "Sample Shopper",
+  "items": [{"productId": 2, "quantity": 2}]
+}
+</code></pre>
+
+<p>Use a fresh GUID for a genuinely new order. Reuse the previous GUID only to retry the same request. A receipt ID is unguessable but functions as a bearer capability; someone with that URL can read the limited receipt. There is no customer login or private account history in this version.</p>
+
+<h2 id="8-run-it-on-your-windows-computer">8. Run it on your Windows computer</h2>
+
+<p>You previously worked with Visual Studio 2026 and SQL Server 2025 Developer. This project uses that background. You also need the .NET 10 SDK and Node.js 22 or later compatible with the locked frontend dependencies. Check <code>dotnet --version</code>, <code>node --version</code> and <code>npm --version</code> first. Keep Node 22 for consistency with the supplied container and CI configuration.</p>
+
+<p>Extract the ZIP to a short path such as <code>C:\Projects\Akhila_Edit</code>. Open that folder in VS Code, or open the API project in Visual Studio. Confirm your SQL Server service is running. Use the server name that already works in SSMS. A default local instance is commonly <code>localhost</code>; a named instance needs its actual name.</p>
+
+<p>Open PowerShell in the project root:</p>
+
+<pre><code>$env:ConnectionStrings__Shop='Server=localhost;Database=AkhilaEdit;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+dotnet restore backend/Shop.Api
+dotnet run --project backend/Shop.Api -- --init
+dotnet run --project backend/Shop.Api --urls http://localhost:5080
+</code></pre>
+
+<p>Integrated Security uses your Windows account. It needs permission to create the demo database for initialization. If you use SQL authentication, set your own username and password in the environment variable; never commit them. <code>TrustServerCertificate=True</code> is for local development with the local server's certificate, not the recommended setting for a cloud database.</p>
+
+<p>Open a second PowerShell window in the project root:</p>
+
+<pre><code>cd frontend
+npm ci
+npm run dev
+</code></pre>
+
+<p>Open <code>http://localhost:5173</code>. Leave both terminals running. Stop each with Ctrl+C when finished. You do not need a React backend: Vite's development proxy forwards API requests to C#.</p>
+
+<h2 id="9-run-the-release-build-locally">9. Run the release build locally</h2>
+
+<p>From the project root, set the connection string as above, then run:</p>
+
+<pre><code>./deploy/publish-local.ps1
+</code></pre>
+
+<p>The script compiles React, publishes C#, copies the frontend into <code>wwwroot</code>, initializes a fresh database if needed, and starts the release output. Open <code>http://localhost:5080</code>. This is a local deployment of the compiled application, not a public internet URL.</p>
+
+<p>If PowerShell blocks scripts under your organization's policy, follow that policy; you can run the documented build commands individually instead of changing system-wide execution settings.</p>
+
+<h2 id="10-docker-deployment-option">10. Docker deployment option</h2>
+
+<p>Install and start Docker Desktop with Linux containers. SQL Server's supplied container requires an x86-64 environment; this configuration is intended for a Windows x64 or Linux x64 host.</p>
+
+<pre><code>Copy-Item .env.example .env
+# Edit .env and choose your own strong SQL_PASSWORD.
+docker compose up --build -d
+</code></pre>
+
+<p>Open <code>http://localhost:8080</code> after <code>http://localhost:8080/api/health</code> reports healthy. SQL Server is not published on a host port in this setup; only the shop binds to localhost. The initialization service waits for database readiness, then creates the schema and sample products. The shop starts after initialization succeeds.</p>
+
+<p><code>docker compose logs -f shop</code> shows API logs. <code>docker compose down</code> stops services while preserving the named data volume. Do not add <code>-v</code> unless you intentionally want to delete your demo data. The bundled SA account is a local demonstration convenience; use a separate restricted application identity for cloud hosting.</p>
+
+<p>Docker configuration is supplied independently of whether Docker execution was available during verification. Check <code>evidence/STATUS.md</code> for the actual verification boundary.</p>
+
+<h2 id="11-test-it-in-layers">11. Test it in layers</h2>
+
+<p><strong>Unit tests</strong> exercise input validation, stable processing order and shipping thresholds without a database.</p>
+
+<p><strong>SQL Server integration tests</strong> create a separate test database, start the real ASP.NET Core application in a test host, send HTTP requests, and check database state. They cover catalog search/filter/sort, totals, stock changes, replayed requests, conflicting keys, rollback, concurrency, missing routes and client price tampering. These tests fail explicitly if SQL Server is unavailable; they do not silently substitute SQLite or an in-memory provider.</p>
+
+<p><strong>Frontend tests</strong> verify stored-cart recovery, quantity rules, removal, unavailable products, subtotal and shipping. Component/browser checks are recorded separately so a passing cart function is not mistaken for a passing user journey.</p>
+
+<p>Run the C# tests on Windows:</p>
+
+<pre><code>$env:TEST_SQL_CONNECTION='Server=localhost;Database=AkhilaEdit_Tests;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+./deploy/test.ps1
+</code></pre>
+
+<p>The test script sets the API connection to the test database. Afterward, set your main connection string again before running the shop. Test output belongs in <code>evidence</code>. The prepared CI workflow runs the same suites with a disposable SQL Server service when you upload the repository to GitHub. A workflow file being present does not mean a cloud CI run already happened.</p>
+
+<h2 id="12-user-acceptance-testing">12. User acceptance testing</h2>
+
+<p>UAT asks whether the application behaves as you expect as its owner. Automated tests help, but they cannot provide your personal acceptance. Use <code>docs/UAT.md</code>. Perform each user journey, record the result, and write your name and date in the sign-off section only after you have actually reviewed it. Agent-executed checks are labeled as such.</p>
+
+<p>Use sample data. Test both happy paths and failures: a successful mug order, an empty bag, unavailable headphones, increasing beyond available stock, filtering to no results, and retrying after a failure. Inspect the SQL data after checkout to connect the UI result to the backend behavior.</p>
+
+<h2 id="13-inspect-the-database-in-ssms">13. Inspect the database in SSMS</h2>
+
+<p>Connect to your server and expand Databases → AkhilaEdit → Tables. Run:</p>
+
+<pre><code>SELECT Id, Name, Price, Stock FROM dbo.Products ORDER BY Id;
+SELECT Id, CreatedAt, Subtotal, Shipping, Total FROM dbo.Orders ORDER BY CreatedAt DESC;
+SELECT OrderId, ProductName, Quantity, UnitPrice
+FROM dbo.OrderItems ORDER BY Id DESC;
+</code></pre>
+
+<p>Compare these results before and after checkout. <code>database/inspection.sql</code> includes a joined receipt query and an inventory integrity check. Read an actual execution plan before claiming an index improved performance; a six-product dataset is too small to support meaningful scalability claims.</p>
+
+<h2 id="14-public-hosting-the-remaining-external-step">14. Public hosting: the remaining external step</h2>
+
+<p>A real public deployment of this stack needs a .NET-capable host and SQL Server or Azure SQL. The default Sites runtime executes JavaScript Workers; it cannot execute this C# API or host SQL Server. Publishing only the React files there would not be a complete working deployment, so this project does not present a mock storefront as a deployed .NET application.</p>
+
+<p>The intended cloud destination is Azure App Service plus Azure SQL. Choose an existing or new Azure subscription and budget before provisioning paid services. This package includes a release deployment runbook in <code>deploy/AZURE.md</code>. No subscription, cloud database, or paid hosting account has been provisioned by this project. A live cloud link remains pending until the account is available and the actual release is deployed and tested there.</p>
+
+<h2 id="15-security-and-scope-decisions">15. Security and scope decisions</h2>
+
+<p>No real payment processor, customer accounts, admin console, email delivery, taxes or fulfillment are implemented. No login means no private order-history screen. The API limits checkout requests and request body size, returns friendly errors, uses parameterized EF Core data access, validates inputs, and uses database constraints. The receipt exposes only order lines and totals.</p>
+
+<p>The application is a portfolio demo, not a production commerce service. Before allowing real customers, add authentication and authorization, payment-provider verification and webhooks, secret management, an appropriate tax/fulfillment design, backups, monitoring, a data-retention policy and security review. Do not describe those as completed features.</p>
+
+<p>The sample SQL runtime is Developer edition for development/testing; use the appropriate licensed SQL offering for actual production workloads. Azure SQL is a separate managed service.</p>
+
+<h2 id="16-how-to-make-it-genuinely-your-project">16. How to make it genuinely your project</h2>
+
+<p>Start by running the application and tracing one request. Then make a change yourself, write a test for it, and commit it. Useful small improvements: add an in-stock-only filter, add a product category with seed data, implement a receipt copy button, or introduce EF migrations for version 2.</p>
+
+<p>Keep a short development journal: what you changed, why, how you tested it, and what you learned. Record your actual contributions. You can accurately describe this as a personal project developed with AI assistance, which you reviewed, tested and extended after doing that work. Do not claim that the generated code was independently written by you or that it handled employer production traffic.</p>
+
+<h2 id="17-a-five-minute-interview-demonstration">17. A five-minute interview demonstration</h2>
+
+<p>Minute 1: show the catalog, search and filters. Explain React state and the API contract.</p>
+
+<p>Minute 2: add two mugs, show the bag estimate and place a sample order. Explain server-calculated prices.</p>
+
+<p>Minute 3: show the new SQL order and reduced stock. Explain the three tables and price snapshots.</p>
+
+<p>Minute 4: open the transaction and concurrency tests. Explain what fails if stock is read and updated separately.</p>
+
+<p>Minute 5: show your test results and one change you made yourself. State the actual deployment status and the next improvement you would make.</p>
+
+<h2 id="18-common-problems-and-fixes">18. Common problems and fixes</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Symptom</th>
+  <th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Collection cannot load</td>
+  <td>Is the API on port 5080 running? Does <code>/api/health</code> succeed?</td>
+</tr>
+<tr>
+  <td>SQL login failed</td>
+  <td>Use the same instance/authentication that works in SSMS; check database permissions.</td>
+</tr>
+<tr>
+  <td>Database not found</td>
+  <td>Run the explicit <code>--init</code> step with a user allowed to create it.</td>
+</tr>
+<tr>
+  <td>Existing DB schema differs</td>
+  <td>EnsureCreated does not upgrade schemas. Use a new demo DB or plan a migration.</td>
+</tr>
+<tr>
+  <td>HTTPS certificate error locally</td>
+  <td>Check the documented local connection-string certificate setting.</td>
+</tr>
+<tr>
+  <td>Bag says stock changed</td>
+  <td>Refresh and reduce/remove the affected item.</td>
+</tr>
+<tr>
+  <td>Checkout returns 409</td>
+  <td>Stock or request identity conflicted; inspect the response and retry the same unchanged request where appropriate.</td>
+</tr>
+<tr>
+  <td>Tests fail at setup</td>
+  <td>Confirm test DB name ends in <code>_Tests</code>, SQL Server is reachable, and test login can recreate it.</td>
+</tr>
+<tr>
+  <td>React page blank</td>
+  <td>Run <code>npm ci</code>, inspect the build output and browser console, and verify the API serves the built assets.</td>
+</tr>
+<tr>
+  <td>Docker SQL takes time</td>
+  <td>Wait for the health check and inspect <code>docker compose logs db</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="19-reference-documentation">19. Reference documentation</h2>
+
+<ul>
+<li><a href="https://react.dev/learn/managing-state">React: managing state</a></li>
+<li><a href="https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis">ASP.NET Core Minimal APIs</a></li>
+<li><a href="https://learn.microsoft.com/ef/core/saving/transactions">EF Core transactions</a></li>
+<li><a href="https://learn.microsoft.com/ef/core/managing-schemas/ensure-created">EF Core EnsureCreated</a></li>
+<li><a href="https://learn.microsoft.com/sql/linux/quickstart-install-connect-docker">SQL Server Linux containers</a></li>
+<li><a href="https://learn.microsoft.com/azure/app-service/quickstart-dotnetcore">Azure App Service .NET deployment</a></li>
+</ul>
+
+<p>Always use the execution evidence bundled with this release for claims about this specific project. Documentation and prepared commands describe how to run it; they do not substitute for an actual successful test or deployment.</p>
+</section><section id="uat"><h1 id="user-acceptance-test-plan-and-execution-record">User acceptance test plan and execution record</h1>
+
+<p>Project: The Akhila Edit · Owner: Akhila Gogulamudi · Release: 1.0 · Prepared: 9 September 2026</p>
+
+<h2 id="execution-boundary">Execution boundary</h2>
+
+<p>28 C# unit/integration tests passed against real SQL Server; 20 frontend unit/component tests passed in jsdom with mocked HTTP responses. A published local ASP.NET Core release was checked using real HTTP and SQL Server. These are engineering checks, not Akhila's personal UAT approval. Browser visual/keyboard/mobile testing could not run because the supported preview runtime could not start the required full stack. No browser behavior is marked as manually passed.</p>
+
+<h2 id="preconditions">Preconditions</h2>
+
+<p>Use a fresh demo database initialized with six products. Mugs begin at 24, backpacks at 18, bottles at 7, lamps at 5, and headphones at 0. Start the application using README.md. Use sample names. Keep SSMS available to verify saved rows. For a fresh test sequence use a separate new demo database; never delete data from an unrelated database.</p>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>User steps</th>
+  <th>Expected result</th>
+  <th>Existing engineering evidence</th>
+  <th>Owner result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>UAT-01</td>
+  <td>Open the shop</td>
+  <td>Six products, working images, readable layout</td>
+  <td>Catalog API + local entrypoint smoke; visual pending</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-02</td>
+  <td>Search for mug</td>
+  <td>Only Quiet Morning Mug remains</td>
+  <td>Component + API test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-03</td>
+  <td>Search for xyz; choose See all essentials</td>
+  <td>Empty state, then full collection</td>
+  <td>Component test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-04</td>
+  <td>Select Home</td>
+  <td>Only home products remain</td>
+  <td>Component + API filter tests passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-05</td>
+  <td>Sort price low to high, then high to low</td>
+  <td>Price order changes correctly</td>
+  <td>Component ascending + API descending tests passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-06</td>
+  <td>Open a product</td>
+  <td>Name, image, description, price and stock shown</td>
+  <td>Component test passed; visual pending</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-07</td>
+  <td>Open an empty bag</td>
+  <td>Empty message and return action</td>
+  <td>Component test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-08</td>
+  <td>Add one backpack; increase to two</td>
+  <td>Bag quantity 2 and correct estimated total</td>
+  <td>Component + cart logic passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-09</td>
+  <td>Decrease to zero or remove item</td>
+  <td>Item disappears; empty bag when last removed</td>
+  <td>Component + cart logic passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-10</td>
+  <td>Add a product and reload browser</td>
+  <td>Bag returns with same IDs and quantities</td>
+  <td>Storage write/recovery tested; real reload pending</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-11</td>
+  <td>Try adding headphones</td>
+  <td>Add is disabled; Back soon shown</td>
+  <td>Component passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-12</td>
+  <td>Increase bottle quantity beyond available stock</td>
+  <td>Quantity cannot exceed stock or 10</td>
+  <td>Cart logic test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-13</td>
+  <td>Leave name empty during checkout</td>
+  <td>Checkout disabled</td>
+  <td>Component test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-14</td>
+  <td>Buy two mugs with sample name</td>
+  <td>$36 subtotal, $5 shipping, $41 total, receipt</td>
+  <td>Real published HTTP+SQL check passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-15</td>
+  <td>Inspect SQL after UAT-14</td>
+  <td>One new order; one line; mug stock reduced by 2</td>
+  <td>Real SQL integration + release smoke passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-16</td>
+  <td>Buy three backpacks</td>
+  <td>$84 subtotal; free shipping</td>
+  <td>SQL integration passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-17</td>
+  <td>Replay identical checkout request ID through Postman</td>
+  <td>Same receipt, no second stock change</td>
+  <td>SQL integration passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-18</td>
+  <td>Reuse request ID with different cart</td>
+  <td>HTTP 409; no extra stock decrement</td>
+  <td>SQL integration passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-19</td>
+  <td>API checkout with available backpack plus unavailable headphones</td>
+  <td>Conflict; backpack decrement rolls back</td>
+  <td>SQL integration passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-20</td>
+  <td>Concurrent API orders for one remaining unit</td>
+  <td>One success, one conflict, stock never negative</td>
+  <td>Real SQL concurrency test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-21</td>
+  <td>Send fake client price/total via Postman</td>
+  <td>Server uses its database prices</td>
+  <td>SQL integration passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-22</td>
+  <td>Stop API in local development; refresh UI</td>
+  <td>Readable failure and retry control</td>
+  <td>Component error state passed; manual service interruption pending</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-23</td>
+  <td>Use keyboard to navigate, open and close dialog</td>
+  <td>Visible focus, reachable controls, focus returns</td>
+  <td>Implemented, not browser-verified</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-24</td>
+  <td>Test at mobile width and 200% zoom</td>
+  <td>No clipping, readable text, usable bag</td>
+  <td>Responsive CSS implemented; visual verification pending</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-25</td>
+  <td>Place order, then check bag</td>
+  <td>Receipt visible and bag cleared</td>
+  <td>Component test passed</td>
+  <td>Pending</td>
+</tr>
+<tr>
+  <td>UAT-26</td>
+  <td>Open the project explanation</td>
+  <td>Accurate stack and demo limitations</td>
+  <td>Implemented; manual review pending</td>
+  <td>Pending</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="defect-record">Defect record</h2>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Finding</th>
+  <th>Resolution/status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ENV-01</td>
+  <td>Previous workspace reset lost local files</td>
+  <td>Reconstructed and checkpoint ZIP saved</td>
+</tr>
+<tr>
+  <td>ENV-02</td>
+  <td>Earlier SQL connection across separate processes failed</td>
+  <td>SQL and test/API processes started together; current real SQL tests passed</td>
+</tr>
+<tr>
+  <td>DEP-01</td>
+  <td>Earlier OpenAPI dependency vulnerability warning</td>
+  <td>Updated .NET package versions; current build has no warnings</td>
+</tr>
+<tr>
+  <td>DATA-01</td>
+  <td>Initial backpack image was labeled tote</td>
+  <td>Product renamed Everyday Backpack to match image</td>
+</tr>
+<tr>
+  <td>ENV-03</td>
+  <td>Browser preview cannot launch the required stack</td>
+  <td>Visual and manual UAT checks remain pending</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sign-off-to-be-completed-by-akhila">Sign-off — to be completed by Akhila</h2>
+
+<ul>
+<li>Tested application version:</li>
+<li>Tested URL or local address:</li>
+<li>Test date:</li>
+<li>Accepted cases:</li>
+<li>Open defects:</li>
+<li>Decision: Pending / Accepted / Accepted with conditions / Rejected</li>
+<li>Owner name and approval:</li>
+</ul>
+
+<p>Do not mark this accepted until the owner actually performs or reviews the tests and records a decision.</p>
+</section><section id="evidence"><h1 id="verification-status-9-september-2026">Verification status — 9 September 2026</h1>
+
+<table>
+<thead>
+<tr>
+  <th>Area</th>
+  <th>Result</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>C# build</td>
+  <td>PASS; 0 warnings, 0 errors</td>
+  <td>Executed .NET 10 SDK build</td>
+</tr>
+<tr>
+  <td>C# unit and SQL integration tests</td>
+  <td>PASS: 28/28, zero skipped</td>
+  <td>backend-tests.trx; backend-test-console.txt</td>
+</tr>
+<tr>
+  <td>React logic and component tests</td>
+  <td>PASS: 20/20</td>
+  <td>frontend-tests.json</td>
+</tr>
+<tr>
+  <td>React production build</td>
+  <td>PASS</td>
+  <td>Vite production output generated</td>
+</tr>
+<tr>
+  <td>Local production deployment</td>
+  <td>PASS</td>
+  <td>deployment-smoke.json</td>
+</tr>
+<tr>
+  <td>SQL engine</td>
+  <td>SQL Server 2025 Developer 17.0.4030.1</td>
+  <td>Real engine used by tests, no in-memory substitution</td>
+</tr>
+<tr>
+  <td>Checkout smoke</td>
+  <td>PASS: 2 mugs, $41 total, stock 24→22, receipt retrieved</td>
+  <td>deployment-smoke.json</td>
+</tr>
+<tr>
+  <td>Browser visual/mobile/keyboard QA</td>
+  <td>NOT EXECUTED</td>
+  <td>Supported preview runtime could not start the full stack</td>
+</tr>
+<tr>
+  <td>Owner UAT approval</td>
+  <td>PENDING</td>
+  <td>docs/UAT.md</td>
+</tr>
+<tr>
+  <td>Docker execution</td>
+  <td>NOT EXECUTED</td>
+  <td>Docker/Compose files prepared; no Docker runtime available</td>
+</tr>
+<tr>
+  <td>GitHub-hosted CI</td>
+  <td>NOT EXECUTED</td>
+  <td>Workflow prepared; not run on a connected GitHub repository</td>
+</tr>
+<tr>
+  <td>Public cloud deployment</td>
+  <td>PENDING</td>
+  <td>Needs .NET hosting and SQL account; deploy/AZURE.md</td>
+</tr>
+</tbody>
+</table>
+
+<p>Frontend component tests use jsdom, mocked HTTP responses and stubbed dialog open/close methods. They are not real-browser tests. Backend tests use WebApplicationFactory and a real disposable SQL Server database. The release smoke check uses real HTTP against the compiled ASP.NET Core application.</p>
+
+<p>The temporary local services were stopped after verification. The localhost address used during testing is not an internet-accessible deployment. Reproduce it on your computer with deploy/publish-local.ps1.</p>
+</section><section id="cloud"><h1 id="azure-release-runbook-prepared-not-executed">Azure release runbook — prepared, not executed</h1>
+
+<p>Target: Azure App Service running the published ASP.NET Core application and Azure SQL Database. React is served by the same C# application. No separate frontend hosting or permissive CORS rule is needed.</p>
+
+<ol>
+<li>Select the Azure subscription, resource group, region and spending limit. Confirm current App Service .NET 10 support in your region, or use the supplied container on an App Service Linux container host.</li>
+<li>Provision a SQL logical server and an empty Azure SQL database. Configure the identity that will create the initial schema. Prefer Microsoft Entra authentication and managed identity for the application; do not put secrets in source control.</li>
+<li>Configure SQL network access. Allow only your deployment machine for initialization and the application's required outbound addresses, or use private networking. Do not use an unrestricted internet firewall rule.</li>
+<li>Set a temporary local <code>ConnectionStrings__Shop</code> with the Azure SQL endpoint and appropriate authorized credentials; use <code>Encrypt=True;TrustServerCertificate=False</code>. Run <code>dotnet run --project backend/Shop.Api -- --init</code> once against the fresh demo database. The initializer does not migrate an old schema.</li>
+<li>Create a restricted database user for the application (SELECT on Products/Orders/OrderItems; INSERT on Orders/OrderItems; UPDATE on Products). Keep schema permissions with a separate deployment identity.</li>
+<li>Run <code>npm ci</code> and <code>npm run build</code> in frontend. Run <code>dotnet publish backend/Shop.Api -c Release -o artifacts/shop</code> from the root. Copy frontend/dist contents into artifacts/shop/wwwroot.</li>
+<li>Create or select App Service. Enable HTTPS-only. Set the <code>ConnectionStrings__Shop</code> application setting using managed identity or a Key Vault secret reference as appropriate. Never paste credentials into the README or a public issue.</li>
+<li>ZIP the contents of artifacts/shop (not its parent directory) and deploy using App Service ZIP deployment. For a container instead, build the supplied Dockerfile, push to your authenticated container registry, and configure App Service to use that image.</li>
+<li>Validate the live root page, <code>/api/health</code>, catalog, sample checkout and receipt. Verify SQL inventory, repeat the same request ID, and capture live deployment evidence. Record the actual URL only after these checks pass.</li>
+<li>Save the release artifact and version, review logs, and rerun owner UAT. For rollback, redeploy the last compatible artifact; do not drop database tables. Plan database schema compatibility before future releases.</li>
+</ol>
+
+<p>This runbook is not proof of a cloud deployment. Required inputs are the subscription, resource choices, authentication/authorization, and a hosting budget. The repository has no embedded Azure credentials.</p>
+</section></main></body></html>

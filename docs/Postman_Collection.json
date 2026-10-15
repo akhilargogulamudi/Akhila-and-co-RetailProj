@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "The Akhila Edit",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5080"
+    },
+    {
+      "key": "requestId",
+      "value": "d4b40dc1-020c-4e06-89e7-f47e9fa6c689"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "Products",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Search",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products?search=mug"
+      }
+    },
+    {
+      "name": "Category and sort",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products?category=Desk&sort=price-asc"
+      }
+    },
+    {
+      "name": "Missing product",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products/9999"
+      }
+    },
+    {
+      "name": "Place demo order (set requestId variable first)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"requestId\": \"{{requestId}}\",\n  \"customerName\": \"Sample Shopper\",\n  \"items\": [\n    {\n      \"productId\": 2,\n      \"quantity\": 2\n    }\n  ]\n}"
+        }
+      }
+    }
+  ]
+}

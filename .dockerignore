@@ -1,0 +1,9 @@
+**/node_modules
+**/bin
+**/obj
+**/wwwroot
+frontend/dist
+.git
+.env
+artifacts
+evidence

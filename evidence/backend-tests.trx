@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b69098d8-fe76-42cd-95c2-158ec8c22071" name="@localhost 2026-09-09 11:42:51" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-09T11:42:51.7979818-05:00" queuing="2026-09-09T11:42:51.7979819-05:00" start="2026-09-09T11:42:50.8573728-05:00" finish="2026-09-09T11:43:08.5137110-05:00" />
+  <TestSettings name="default" id="8b925cbc-6905-4cf6-a5e3-fe5f9b7e6ee6">
+    <Deployment runDeploymentRoot="_localhost_2026-09-09_11_42_51" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="862feb66-b92c-4a6d-a7ee-e37525f34a0f" testId="16c13b3e-193d-bcd0-8f1f-f56bff82cd00" testName="Shop.Tests.DatabaseTests.Retry_is_idempotent" computerName="localhost" duration="00:00:00.5432595" startTime="2026-09-09T11:42:54.8297318-05:00" endTime="2026-09-09T11:42:56.0751318-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="862feb66-b92c-4a6d-a7ee-e37525f34a0f" />
+    <UnitTestResult executionId="cbbeb496-5ac7-487d-a702-4b3a2e6a4f86" testId="210f5215-ac1e-c851-cd6a-f9a70065a622" testName="Shop.Tests.DatabaseTests.Client_price_is_ignored" computerName="localhost" duration="00:00:00.0786492" startTime="2026-09-09T11:43:01.7585050-05:00" endTime="2026-09-09T11:43:03.0452533-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbbeb496-5ac7-487d-a702-4b3a2e6a4f86" />
+    <UnitTestResult executionId="d5a36e80-3a33-4a52-b954-4f9f5130279f" testId="4ad6ca12-83e9-4bbb-e7b0-80d77dd2dc54" testName="Shop.Tests.PricingTests.Stable_product_order" computerName="localhost" duration="00:00:00.0157049" startTime="2026-09-09T11:42:51.7515405-05:00" endTime="2026-09-09T11:42:51.7515814-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d5a36e80-3a33-4a52-b954-4f9f5130279f" />
+    <UnitTestResult executionId="cf4bb9da-3fd6-4a6d-9277-8689af23281d" testId="cbba424f-9359-5a2c-24c1-80b172720d44" testName="Shop.Tests.PricingTests.Shipping_threshold(value: 74.99, expected: 5)" computerName="localhost" duration="00:00:00.0006076" startTime="2026-09-09T11:42:51.7055823-05:00" endTime="2026-09-09T11:42:51.7056189-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf4bb9da-3fd6-4a6d-9277-8689af23281d" />
+    <UnitTestResult executionId="2112f6a3-e43a-43af-9f24-af4832da5593" testId="534b0fc5-63a5-76ef-eb41-063619588c9e" testName="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: -1)" computerName="localhost" duration="00:00:00.0004627" startTime="2026-09-09T11:42:51.7509119-05:00" endTime="2026-09-09T11:42:51.7509783-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2112f6a3-e43a-43af-9f24-af4832da5593" />
+    <UnitTestResult executionId="8979b056-629f-4976-a852-cb3f525cdf06" testId="454dde57-44f6-7733-163a-6ee1cf1e7762" testName="Shop.Tests.DatabaseTests.Search_pagination" computerName="localhost" duration="00:00:00.0655377" startTime="2026-09-09T11:42:56.0754900-05:00" endTime="2026-09-09T11:42:56.6818902-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8979b056-629f-4976-a852-cb3f525cdf06" />
+    <UnitTestResult executionId="18d2fe5f-cdf6-4518-a252-c69952ff871f" testId="daf06692-4509-d547-5077-7945c07d57aa" testName="Shop.Tests.PricingTests.Empty_cart_rejected" computerName="localhost" duration="00:00:00.0006313" startTime="2026-09-09T11:42:51.7042582-05:00" endTime="2026-09-09T11:42:51.7044028-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18d2fe5f-cdf6-4518-a252-c69952ff871f" />
+    <UnitTestResult executionId="8c8ceeb4-d5d2-4ead-8bcf-9682f51b599f" testId="07b96902-f789-7a24-5dd1-e353beac0fde" testName="Shop.Tests.DatabaseTests.Receipt_omits_customer_name" computerName="localhost" duration="00:00:00.1033924" startTime="2026-09-09T11:42:59.6234903-05:00" endTime="2026-09-09T11:43:00.4685424-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8c8ceeb4-d5d2-4ead-8bcf-9682f51b599f" />
+    <UnitTestResult executionId="068a176f-98ab-4429-b511-59c07c38367c" testId="cf7dd9cd-2ea1-3a04-a532-602aba2de517" testName="Shop.Tests.DatabaseTests.Key_cannot_be_reused_for_different_cart" computerName="localhost" duration="00:00:00.1027603" startTime="2026-09-09T11:42:56.6822547-05:00" endTime="2026-09-09T11:42:57.4605703-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="068a176f-98ab-4429-b511-59c07c38367c" />
+    <UnitTestResult executionId="caa989e9-a808-4f7a-be6a-e2d978756390" testId="409a9c36-23fa-157c-3179-a934491c64a1" testName="Shop.Tests.DatabaseTests.Invalid_quantity_writes_nothing" computerName="localhost" duration="00:00:00.0273116" startTime="2026-09-09T11:43:04.1409005-05:00" endTime="2026-09-09T11:43:04.8130700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="caa989e9-a808-4f7a-be6a-e2d978756390" />
+    <UnitTestResult executionId="a6764da0-fec0-455d-a29f-27e604323f79" testId="2e93d9af-09fa-97a1-294f-dde7fad42cbc" testName="Shop.Tests.PricingTests.Empty_name_rejected" computerName="localhost" duration="00:00:00.0077727" startTime="2026-09-09T11:42:51.6721118-05:00" endTime="2026-09-09T11:42:51.6912237-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6764da0-fec0-455d-a29f-27e604323f79" />
+    <UnitTestResult executionId="f2affbaf-2023-4b1d-83ed-c83528e315f5" testId="b6cb4e21-ac80-3bd5-fdec-b9368d4b6d08" testName="Shop.Tests.DatabaseTests.Invalid_page" computerName="localhost" duration="00:00:00.0291233" startTime="2026-09-09T11:43:03.0478857-05:00" endTime="2026-09-09T11:43:04.1403951-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2affbaf-2023-4b1d-83ed-c83528e315f5" />
+    <UnitTestResult executionId="a0fc9927-d74c-46ff-9a2a-79839fc61fe1" testId="32cfb84f-09ac-76f2-17ba-fe21c9a9863f" testName="Shop.Tests.DatabaseTests.Health_reads_database" computerName="localhost" duration="00:00:00.0571629" startTime="2026-09-09T11:43:00.4692256-05:00" endTime="2026-09-09T11:43:01.7536757-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0fc9927-d74c-46ff-9a2a-79839fc61fe1" />
+    <UnitTestResult executionId="bb24a246-bc68-4220-922c-dcd9aed1fdff" testId="2e78b58d-974e-6cfc-6554-6226e7c055ee" testName="Shop.Tests.DatabaseTests.Correct_total_and_stock" computerName="localhost" duration="00:00:00.1663250" startTime="2026-09-09T11:42:58.4614252-05:00" endTime="2026-09-09T11:42:59.6230217-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb24a246-bc68-4220-922c-dcd9aed1fdff" />
+    <UnitTestResult executionId="0cf110ae-e3a1-46ef-aefb-033aaf62be62" testId="f00d827f-466c-aa57-f8be-2e46dec7f80c" testName="Shop.Tests.PricingTests.Shipping_threshold(value: 10, expected: 5)" computerName="localhost" duration="00:00:00.0000043" startTime="2026-09-09T11:42:51.7062853-05:00" endTime="2026-09-09T11:42:51.7063377-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0cf110ae-e3a1-46ef-aefb-033aaf62be62" />
+    <UnitTestResult executionId="16125f2a-09f5-4786-ab7f-62d61d6bc794" testId="d02a4bdd-265c-cc37-364b-b3f2ebc951b3" testName="Shop.Tests.PricingTests.Shipping_threshold(value: 75, expected: 0)" computerName="localhost" duration="00:00:00.0050128" startTime="2026-09-09T11:42:51.7054392-05:00" endTime="2026-09-09T11:42:51.7055102-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16125f2a-09f5-4786-ab7f-62d61d6bc794" />
+    <UnitTestResult executionId="8598e9d4-0e89-4231-8e8d-59e37ca25f5c" testId="aa822851-b392-eb49-2009-bacb4ae3baac" testName="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: 0)" computerName="localhost" duration="00:00:00.0000191" startTime="2026-09-09T11:42:51.7513011-05:00" endTime="2026-09-09T11:42:51.7513527-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8598e9d4-0e89-4231-8e8d-59e37ca25f5c" />
+    <UnitTestResult executionId="4f88aaea-3994-4bca-afde-bc3c11113e1f" testId="2345c03b-e6ac-5d5c-0d7b-1a1b219cba2e" testName="Shop.Tests.DatabaseTests.Filter_and_sort" computerName="localhost" duration="00:00:00.0338334" startTime="2026-09-09T11:43:04.8134179-05:00" endTime="2026-09-09T11:43:05.4919275-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f88aaea-3994-4bca-afde-bc3c11113e1f" />
+    <UnitTestResult executionId="54afbfb4-a1da-40c0-b3ac-c319868f8fb2" testId="7bf7c3f9-8ee8-70d9-7f0f-6ffd20145b9d" testName="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: 11)" computerName="localhost" duration="00:00:00.0006678" startTime="2026-09-09T11:42:51.7504948-05:00" endTime="2026-09-09T11:42:51.7505532-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54afbfb4-a1da-40c0-b3ac-c319868f8fb2" />
+    <UnitTestResult executionId="4a4dcd80-06e6-4196-96c7-69dd9e188eb4" testId="2b1c109f-bf6a-938c-a74a-f234f9a2f6ae" testName="Shop.Tests.DatabaseTests.Entire_transaction_rolls_back" computerName="localhost" duration="00:00:00.0578261" startTime="2026-09-09T11:43:07.4204025-05:00" endTime="2026-09-09T11:43:08.4144921-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a4dcd80-06e6-4196-96c7-69dd9e188eb4" />
+    <UnitTestResult executionId="aa13e3c5-6d1d-4219-b323-d7d5fddd82fe" testId="02bf666a-1a9b-b9f1-cc71-a918a811f6b6" testName="Shop.Tests.PricingTests.Empty_request_id_rejected" computerName="localhost" duration="00:00:00.0004996" startTime="2026-09-09T11:42:51.7517368-05:00" endTime="2026-09-09T11:42:51.7517785-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa13e3c5-6d1d-4219-b323-d7d5fddd82fe" />
+    <UnitTestResult executionId="f0dc0e7b-13d0-4ecc-ac7e-4c6b7b73f91c" testId="020ad14e-631a-124f-7095-fb16574c7399" testName="Shop.Tests.DatabaseTests.Missing_api_route" computerName="localhost" duration="00:00:00.0337160" startTime="2026-09-09T11:43:06.4842645-05:00" endTime="2026-09-09T11:43:07.4184403-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f0dc0e7b-13d0-4ecc-ac7e-4c6b7b73f91c" />
+    <UnitTestResult executionId="5fda7591-7a96-4bea-a28f-fdd40a7f895a" testId="dc7ee397-fd99-22a2-23be-6c36e5d9a081" testName="Shop.Tests.DatabaseTests.Concurrent_checkouts_cannot_oversell" computerName="localhost" duration="00:00:00.2006721" startTime="2026-09-09T11:42:57.4613207-05:00" endTime="2026-09-09T11:42:58.4609697-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5fda7591-7a96-4bea-a28f-fdd40a7f895a" />
+    <UnitTestResult executionId="7a452b84-7bb4-4022-9209-cc9f47bb4881" testId="533f610c-1e14-eb76-5019-84d52b2b2728" testName="Shop.Tests.PricingTests.Null_cart_line_rejected" computerName="localhost" duration="00:00:00.0004702" startTime="2026-09-09T11:42:51.7064439-05:00" endTime="2026-09-09T11:42:51.7064780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a452b84-7bb4-4022-9209-cc9f47bb4881" />
+    <UnitTestResult executionId="e0dac7ef-4621-4822-88d5-5a787b9ebaac" testId="d19f66e1-5791-72ba-c403-0540c6ed921c" testName="Shop.Tests.DatabaseTests.Free_shipping" computerName="localhost" duration="00:00:00.0847897" startTime="2026-09-09T11:43:05.4922857-05:00" endTime="2026-09-09T11:43:06.4839261-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0dac7ef-4621-4822-88d5-5a787b9ebaac" />
+    <UnitTestResult executionId="7f41dabb-e609-4640-b336-7be8dbd50f54" testId="89d4eff6-e557-18c0-35ac-32b16a560b3f" testName="Shop.Tests.DatabaseTests.Missing_product" computerName="localhost" duration="00:00:00.5341945" startTime="2026-09-09T11:42:51.6736134-05:00" endTime="2026-09-09T11:42:54.8283867-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f41dabb-e609-4640-b336-7be8dbd50f54" />
+    <UnitTestResult executionId="2f64e364-4c64-4db2-a584-bb7d83369463" testId="712be331-1323-9d23-ad60-1cb9144c9824" testName="Shop.Tests.PricingTests.Duplicate_product_rejected" computerName="localhost" duration="00:00:00.0032730" startTime="2026-09-09T11:42:51.7052300-05:00" endTime="2026-09-09T11:42:51.7052771-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f64e364-4c64-4db2-a584-bb7d83369463" />
+    <UnitTestResult executionId="16377cfa-cfdf-4644-bdc7-6cac92124384" testId="d034bdde-f972-b355-681a-0fd867717adc" testName="Shop.Tests.PricingTests.Shipping_threshold(value: 100, expected: 0)" computerName="localhost" duration="00:00:00.0000124" startTime="2026-09-09T11:42:51.7056890-05:00" endTime="2026-09-09T11:42:51.7057341-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16377cfa-cfdf-4644-bdc7-6cac92124384" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: -1)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="534b0fc5-63a5-76ef-eb41-063619588c9e">
+      <Execution id="2112f6a3-e43a-43af-9f24-af4832da5593" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Invalid_quantity_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Retry_is_idempotent" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="16c13b3e-193d-bcd0-8f1f-f56bff82cd00">
+      <Execution id="862feb66-b92c-4a6d-a7ee-e37525f34a0f" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Retry_is_idempotent" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Empty_cart_rejected" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="daf06692-4509-d547-5077-7945c07d57aa">
+      <Execution id="18d2fe5f-cdf6-4518-a252-c69952ff871f" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Empty_cart_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Filter_and_sort" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="2345c03b-e6ac-5d5c-0d7b-1a1b219cba2e">
+      <Execution id="4f88aaea-3994-4bca-afde-bc3c11113e1f" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Filter_and_sort" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Duplicate_product_rejected" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="712be331-1323-9d23-ad60-1cb9144c9824">
+      <Execution id="2f64e364-4c64-4db2-a584-bb7d83369463" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Duplicate_product_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Invalid_quantity_writes_nothing" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="409a9c36-23fa-157c-3179-a934491c64a1">
+      <Execution id="caa989e9-a808-4f7a-be6a-e2d978756390" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Invalid_quantity_writes_nothing" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Free_shipping" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="d19f66e1-5791-72ba-c403-0540c6ed921c">
+      <Execution id="e0dac7ef-4621-4822-88d5-5a787b9ebaac" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Free_shipping" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Key_cannot_be_reused_for_different_cart" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="cf7dd9cd-2ea1-3a04-a532-602aba2de517">
+      <Execution id="068a176f-98ab-4429-b511-59c07c38367c" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Key_cannot_be_reused_for_different_cart" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Stable_product_order" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="4ad6ca12-83e9-4bbb-e7b0-80d77dd2dc54">
+      <Execution id="d5a36e80-3a33-4a52-b954-4f9f5130279f" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Stable_product_order" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Empty_request_id_rejected" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="02bf666a-1a9b-b9f1-cc71-a918a811f6b6">
+      <Execution id="aa13e3c5-6d1d-4219-b323-d7d5fddd82fe" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Empty_request_id_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Shipping_threshold(value: 10, expected: 5)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="f00d827f-466c-aa57-f8be-2e46dec7f80c">
+      <Execution id="0cf110ae-e3a1-46ef-aefb-033aaf62be62" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Shipping_threshold" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Concurrent_checkouts_cannot_oversell" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="dc7ee397-fd99-22a2-23be-6c36e5d9a081">
+      <Execution id="5fda7591-7a96-4bea-a28f-fdd40a7f895a" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Concurrent_checkouts_cannot_oversell" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Shipping_threshold(value: 75, expected: 0)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="d02a4bdd-265c-cc37-364b-b3f2ebc951b3">
+      <Execution id="16125f2a-09f5-4786-ab7f-62d61d6bc794" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Shipping_threshold" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: 11)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="7bf7c3f9-8ee8-70d9-7f0f-6ffd20145b9d">
+      <Execution id="54afbfb4-a1da-40c0-b3ac-c319868f8fb2" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Invalid_quantity_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Invalid_page" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="b6cb4e21-ac80-3bd5-fdec-b9368d4b6d08">
+      <Execution id="f2affbaf-2023-4b1d-83ed-c83528e315f5" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Invalid_page" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Empty_name_rejected" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="2e93d9af-09fa-97a1-294f-dde7fad42cbc">
+      <Execution id="a6764da0-fec0-455d-a29f-27e604323f79" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Empty_name_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Health_reads_database" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="32cfb84f-09ac-76f2-17ba-fe21c9a9863f">
+      <Execution id="a0fc9927-d74c-46ff-9a2a-79839fc61fe1" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Health_reads_database" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Receipt_omits_customer_name" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="07b96902-f789-7a24-5dd1-e353beac0fde">
+      <Execution id="8c8ceeb4-d5d2-4ead-8bcf-9682f51b599f" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Receipt_omits_customer_name" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Invalid_quantity_rejected(q: 0)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="aa822851-b392-eb49-2009-bacb4ae3baac">
+      <Execution id="8598e9d4-0e89-4231-8e8d-59e37ca25f5c" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Invalid_quantity_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Client_price_is_ignored" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="210f5215-ac1e-c851-cd6a-f9a70065a622">
+      <Execution id="cbbeb496-5ac7-487d-a702-4b3a2e6a4f86" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Client_price_is_ignored" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Missing_product" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="89d4eff6-e557-18c0-35ac-32b16a560b3f">
+      <Execution id="7f41dabb-e609-4640-b336-7be8dbd50f54" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Missing_product" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Correct_total_and_stock" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="2e78b58d-974e-6cfc-6554-6226e7c055ee">
+      <Execution id="bb24a246-bc68-4220-922c-dcd9aed1fdff" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Correct_total_and_stock" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Shipping_threshold(value: 74.99, expected: 5)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="cbba424f-9359-5a2c-24c1-80b172720d44">
+      <Execution id="cf4bb9da-3fd6-4a6d-9277-8689af23281d" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Shipping_threshold" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Null_cart_line_rejected" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="533f610c-1e14-eb76-5019-84d52b2b2728">
+      <Execution id="7a452b84-7bb4-4022-9209-cc9f47bb4881" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Null_cart_line_rejected" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.PricingTests.Shipping_threshold(value: 100, expected: 0)" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="d034bdde-f972-b355-681a-0fd867717adc">
+      <Execution id="16377cfa-cfdf-4644-bdc7-6cac92124384" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.PricingTests" name="Shipping_threshold" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Search_pagination" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="454dde57-44f6-7733-163a-6ee1cf1e7762">
+      <Execution id="8979b056-629f-4976-a852-cb3f525cdf06" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Search_pagination" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Entire_transaction_rolls_back" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="2b1c109f-bf6a-938c-a74a-f234f9a2f6ae">
+      <Execution id="4a4dcd80-06e6-4196-96c7-69dd9e188eb4" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Entire_transaction_rolls_back" />
+    </UnitTest>
+    <UnitTest name="Shop.Tests.DatabaseTests.Missing_api_route" storage="/workspace/sites/akhila-edit-shop/backend/shop.tests/bin/debug/net10.0/shop.tests.dll" id="020ad14e-631a-124f-7095-fb16574c7399">
+      <Execution id="f0dc0e7b-13d0-4ecc-ac7e-4c6b7b73f91c" />
+      <TestMethod codeBase="/workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Shop.Tests.DatabaseTests" name="Missing_api_route" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="16c13b3e-193d-bcd0-8f1f-f56bff82cd00" executionId="862feb66-b92c-4a6d-a7ee-e37525f34a0f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="210f5215-ac1e-c851-cd6a-f9a70065a622" executionId="cbbeb496-5ac7-487d-a702-4b3a2e6a4f86" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ad6ca12-83e9-4bbb-e7b0-80d77dd2dc54" executionId="d5a36e80-3a33-4a52-b954-4f9f5130279f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cbba424f-9359-5a2c-24c1-80b172720d44" executionId="cf4bb9da-3fd6-4a6d-9277-8689af23281d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="534b0fc5-63a5-76ef-eb41-063619588c9e" executionId="2112f6a3-e43a-43af-9f24-af4832da5593" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="454dde57-44f6-7733-163a-6ee1cf1e7762" executionId="8979b056-629f-4976-a852-cb3f525cdf06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="daf06692-4509-d547-5077-7945c07d57aa" executionId="18d2fe5f-cdf6-4518-a252-c69952ff871f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07b96902-f789-7a24-5dd1-e353beac0fde" executionId="8c8ceeb4-d5d2-4ead-8bcf-9682f51b599f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf7dd9cd-2ea1-3a04-a532-602aba2de517" executionId="068a176f-98ab-4429-b511-59c07c38367c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="409a9c36-23fa-157c-3179-a934491c64a1" executionId="caa989e9-a808-4f7a-be6a-e2d978756390" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e93d9af-09fa-97a1-294f-dde7fad42cbc" executionId="a6764da0-fec0-455d-a29f-27e604323f79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6cb4e21-ac80-3bd5-fdec-b9368d4b6d08" executionId="f2affbaf-2023-4b1d-83ed-c83528e315f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="32cfb84f-09ac-76f2-17ba-fe21c9a9863f" executionId="a0fc9927-d74c-46ff-9a2a-79839fc61fe1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e78b58d-974e-6cfc-6554-6226e7c055ee" executionId="bb24a246-bc68-4220-922c-dcd9aed1fdff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f00d827f-466c-aa57-f8be-2e46dec7f80c" executionId="0cf110ae-e3a1-46ef-aefb-033aaf62be62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d02a4bdd-265c-cc37-364b-b3f2ebc951b3" executionId="16125f2a-09f5-4786-ab7f-62d61d6bc794" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa822851-b392-eb49-2009-bacb4ae3baac" executionId="8598e9d4-0e89-4231-8e8d-59e37ca25f5c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2345c03b-e6ac-5d5c-0d7b-1a1b219cba2e" executionId="4f88aaea-3994-4bca-afde-bc3c11113e1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7bf7c3f9-8ee8-70d9-7f0f-6ffd20145b9d" executionId="54afbfb4-a1da-40c0-b3ac-c319868f8fb2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b1c109f-bf6a-938c-a74a-f234f9a2f6ae" executionId="4a4dcd80-06e6-4196-96c7-69dd9e188eb4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02bf666a-1a9b-b9f1-cc71-a918a811f6b6" executionId="aa13e3c5-6d1d-4219-b323-d7d5fddd82fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="020ad14e-631a-124f-7095-fb16574c7399" executionId="f0dc0e7b-13d0-4ecc-ac7e-4c6b7b73f91c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc7ee397-fd99-22a2-23be-6c36e5d9a081" executionId="5fda7591-7a96-4bea-a28f-fdd40a7f895a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="533f610c-1e14-eb76-5019-84d52b2b2728" executionId="7a452b84-7bb4-4022-9209-cc9f47bb4881" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d19f66e1-5791-72ba-c403-0540c6ed921c" executionId="e0dac7ef-4621-4822-88d5-5a787b9ebaac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89d4eff6-e557-18c0-35ac-32b16a560b3f" executionId="7f41dabb-e609-4640-b336-7be8dbd50f54" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="712be331-1323-9d23-ad60-1cb9144c9824" executionId="2f64e364-4c64-4db2-a584-bb7d83369463" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d034bdde-f972-b355-681a-0fd867717adc" executionId="16377cfa-cfdf-4644-bdc7-6cac92124384" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="28" executed="28" passed="28" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.1+bf6400fd51 (64-bit .NET 10.0.11)
+[xUnit.net 00:00:00.16]   Discovering: Shop.Tests
+[xUnit.net 00:00:00.24]   Discovered:  Shop.Tests
+[xUnit.net 00:00:00.30]   Starting:    Shop.Tests
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order 6bbb84d3-27b8-4b1c-8901-0c029512f46b saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order 7c31c56b-939a-401c-8203-fb04858034b0 saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order 8edef176-8460-4929-9cf2-9bb0aa749ee9 saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order 7378d038-5586-4054-8499-244cd8be744e saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order de5ed58d-218b-4678-8e6d-2e6f048df242 saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order f844a70f-988f-40e9-85d4-87766001136e saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Shop.Api.CheckoutService[0]
+      Demo order a178f45c-b976-45c3-880b-b894a48ff603 saved with 1 lines
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: /workspace/sites/akhila-edit-shop/backend/Shop.Api/wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/sites/akhila-edit-shop/backend/Shop.Api
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[xUnit.net 00:00:17.08]   Finished:    Shop.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

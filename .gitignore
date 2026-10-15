@@ -1,0 +1,9 @@
+**/node_modules/
+**/bin/
+**/obj/
+**/wwwroot/
+frontend/dist/
+.env
+*.user
+artifacts/
+.vs/

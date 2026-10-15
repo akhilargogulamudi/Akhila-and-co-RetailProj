@@ -1,0 +1,9 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Shop.Api -> /workspace/sites/akhila-edit-shop/backend/Shop.Api/bin/Debug/net10.0/Shop.Api.dll
+  Shop.Tests -> /workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll
+Test run for /workspace/sites/akhila-edit-shop/backend/Shop.Tests/bin/Debug/net10.0/Shop.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/sites/akhila-edit-shop/evidence/backend-tests.trx
+
+Passed!  - Failed:     0, Passed:    28, Skipped:     0, Total:    28, Duration: 16 s - Shop.Tests.dll (net10.0)
